@@ -2,4 +2,4 @@ name:  dart_rtc_common
 description:  Common library for dart_rtc_client and dart_rtc_server
 
 dependencies:
-  unittest: { sdk: unittest }
+ unittest: 0.3.4

@@ -6,7 +6,6 @@ import 'dart:math';
 part 'src/packethandler.dart';
 part 'src/packetfactory.dart';
 part 'src/eventtarget.dart';
-part 'src/annotations.dart';
 // Exceptions
 part 'src/exception/invalidpacketexception.dart';
 
