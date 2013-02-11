@@ -12,11 +12,12 @@ part "mocks/mockmockeventlistener.dart"; // =)
 part "tests/packettests.dart";
 part "tests/eventtests.dart";
 part "tests/packethandlertests.dart";
-
+part "tests/packetfactorytests.dart";
 void main() {
   useVMConfiguration();
   new PacketTests().run();
   new EventTests().run();
   new PacketHandlerTests().run();
+  new PacketFactoryTests().run();
 }
 
