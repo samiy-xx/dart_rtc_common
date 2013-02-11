@@ -101,8 +101,8 @@ class PacketFactory {
    * Returns a json stringified Packet for websocket send
    */
   static String get(Packet p) {
-    return p.toString();
-    //return json.stringify(p); 
+    //return p.toString();
+    return json.stringify(p); 
   }
   
 }

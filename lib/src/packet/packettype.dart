@@ -66,4 +66,5 @@ class PacketType {
   final String type;
   const PacketType(this.type);
   String toString() => type;
+  
 }
