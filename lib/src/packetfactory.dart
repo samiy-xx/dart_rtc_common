@@ -81,8 +81,11 @@ class PacketFactory {
         case "removeuser":
           p = RemoveUserCommand.fromMap(m);
           break;
+        case "setchannelvars":
+          p = SetChannelVarsCommand.fromMap(m);
+          break;
         default:
-          new Logger().Warning("(packetfactory.dart) Unkown packet");
+          new Logger().Warning("(packetfactory.dart) Unkown packet ($pt)");
           p = null;
           break;
       }
