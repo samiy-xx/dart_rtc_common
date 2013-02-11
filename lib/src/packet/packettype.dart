@@ -62,6 +62,7 @@ class PacketType {
    */
   static final PacketType CHANNELMESSAGE = const PacketType("channelmessage");
   static final PacketType PEERCREATED = const PacketType("peercreated");
+  static final PacketType SETCHANNELVARS = const PacketType("setchannelvars");
   final String type;
   const PacketType(this.type);
   String toString() => type;

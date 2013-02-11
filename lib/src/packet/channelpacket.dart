@@ -58,3 +58,26 @@ class RemoveUserCommand implements Command {
   }
 }
 
+class SetChannelVarsCommand implements Command {
+  SetChannelVarsCommand();
+  SetChannelVarsCommand.With(this.id, this.channelId, this.limit);
+  
+  PacketType packetType = PacketType.SETCHANNELVARS;
+  String id;
+  String channelId;
+  int limit;
+  
+  Map toJson() {
+    return {
+      'id': id,
+      'channelId': channelId,
+      'limit': limit,
+      'packetType': packetType.toString()
+    };
+  }
+  
+  static SetChannelVarsCommand fromMap(Map m) {
+    return new SetChannelVarsCommand.With(m['id'], m['channelId'], m['limit']);
+  }
+}
+
