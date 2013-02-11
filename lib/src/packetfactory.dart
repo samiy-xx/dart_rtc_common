@@ -24,70 +24,71 @@ class PacketFactory {
    */
   static Packet getPacketFromMap(Map m) {
     try {
-      String pt = m['packetType'];
+      PacketType type = new PacketType(m['packetType']);
       Packet p;
-      switch (pt) {
-        case "helo":
+      switch (type) {
+        case PacketType.HELO:
           p = HeloPacket.fromMap(m);
           break;
-        case "desc":
+        case PacketType.DESC:
           p = DescriptionPacket.fromMap(m);
           break;
-        case "ice":
+        case PacketType.ICE:
           p = IcePacket.fromMap(m);
           break;
-        case "connected":
+        case PacketType.CONNECTED:
           p = ConnectionSuccessPacket.fromMap(m);
           break;
-        case "id":
+        case PacketType.ID:
           p = IdPacket.fromMap(m);
           break;
-        case "join":
+        case PacketType.JOIN:
           p = JoinPacket.fromMap(m);
           break;
-        case "pong":
+        case PacketType.PONG:
           p = PongPacket.fromMap(m);
           break;
-        case "ping":
+        case PacketType.PING:
           p = PingPacket.fromMap(m);
           break;
-        case "bye":
+        case PacketType.BYE:
           p = ByePacket.fromMap(m);
           break;
-        case "queue":
+        case PacketType.QUEUE:
           p = QueuePacket.fromMap(m);
           break;
-        case "next":
+        case PacketType.NEXT:
           p = NextPacket.fromMap(m);
           break;
-        case "usermessage":
+        case PacketType.USERMESSAGE:
           p = UserMessage.fromMap(m);
           break;
-        case "channelmessage":
+        case PacketType.CHANNELMESSAGE:
           p = ChannelMessage.fromMap(m);
           break;
-        case "disconnected":
+        case PacketType.DISCONNECTED:
           p = Disconnected.fromMap(m);
           break;
-        case "random":
+        case PacketType.RANDOM:
           p = RandomUserPacket.fromMap(m);
           break;
-        case "file":
+        case PacketType.FILE:
           p = FilePacket.fromMap(m);
           break;
-        case "channel":
+        case PacketType.CHANNEL:
           p = ChannelPacket.fromMap(m);
           break;
-        case "removeuser":
+        case PacketType.REMOVEUSER:
           p = RemoveUserCommand.fromMap(m);
           break;
-        case "setchannelvars":
+        case PacketType.SETCHANNELVARS:
           p = SetChannelVarsCommand.fromMap(m);
           break;
         default:
-          new Logger().Warning("(packetfactory.dart) Unkown packet ($pt)");
+          new Logger().Warning("(packetfactory.dart) Unkown packet (${m['packetType']})");
           p = null;
           break;
+        
       }
       return p;
     } catch(e) {
@@ -100,7 +101,8 @@ class PacketFactory {
    * Returns a json stringified Packet for websocket send
    */
   static String get(Packet p) {
-    return json.stringify(p); 
+    return p.toString();
+    //return json.stringify(p); 
   }
   
 }
