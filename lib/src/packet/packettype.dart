@@ -63,6 +63,7 @@ class PacketType {
   static const PacketType CHANNELMESSAGE = const PacketType("channelmessage");
   static const PacketType CHANNEL = const PacketType("channel");
   static const PacketType CHANNELJOIN = const PacketType("channeljoin");
+  static const PacketType CHANGENICK = const PacketType("changenick");
   static const PacketType PEERCREATED = const PacketType("peercreated");
   static const PacketType SETCHANNELVARS = const PacketType("setchannelvars");
   final String type;

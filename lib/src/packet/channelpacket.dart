@@ -79,6 +79,27 @@ class ChannelJoinCommand implements Command {
   }
 }
 
+class ChangeNickCommand implements Command {
+  ChangeNickCommand();
+  ChangeNickCommand.With(this.id, this.newId);
+  
+  String id;
+  String newId;
+  PacketType packetType = PacketType.CHANGENICK;
+  
+  Map toJson() {
+    return {
+      'id': id,
+      'newId': newId,
+      'packetType': packetType.toString()
+    };
+  }
+  
+  static ChangeNickCommand fromMap(Map m) {
+    return new ChangeNickCommand.With(m['id'], m['newId']);
+  }
+}
+
 class SetChannelVarsCommand implements Command {
   SetChannelVarsCommand();
   SetChannelVarsCommand.With(this.id, this.channelId, this.limit);
