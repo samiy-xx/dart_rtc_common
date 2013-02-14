@@ -84,6 +84,9 @@ class PacketFactory {
         case "setchannelvars":
           p = SetChannelVarsCommand.fromMap(m);
           break;
+        case "channeljoin":
+          p = ChannelJoinCommand.fromMap(m);
+          break;
         default:
           new Logger().Warning("(packetfactory.dart) Unkown packet ($pt)");
           p = null;

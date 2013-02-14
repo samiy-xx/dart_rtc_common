@@ -43,7 +43,7 @@ class PacketType {
   static const PacketType RANDOM = const PacketType("random");
   static const PacketType DISCONNECTED = const PacketType("disconnected");
   static const PacketType QUEUE = const PacketType("queue");
-  static const PacketType CHANNEL = const PacketType("channel");
+  
   static const PacketType FILE = const PacketType("file");
   
   /**
@@ -61,6 +61,8 @@ class PacketType {
    * CHANNELMESSAGE packet sends a message to everyone in channel
    */
   static const PacketType CHANNELMESSAGE = const PacketType("channelmessage");
+  static const PacketType CHANNEL = const PacketType("channel");
+  static const PacketType CHANNELJOIN = const PacketType("channeljoin");
   static const PacketType PEERCREATED = const PacketType("peercreated");
   static const PacketType SETCHANNELVARS = const PacketType("setchannelvars");
   final String type;

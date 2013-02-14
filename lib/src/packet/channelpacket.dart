@@ -58,6 +58,27 @@ class RemoveUserCommand implements Command {
   }
 }
 
+class ChannelJoinCommand implements Command {
+  ChannelJoinCommand();
+  ChannelJoinCommand.With(this.id, this.channelId);
+  
+  String id;
+  String channelId;
+  PacketType packetType = PacketType.CHANNELJOIN;
+  
+  Map toJson() {
+    return {
+      'id': id,
+      'channelId': channelId,
+      'packetType': packetType.toString()
+    };
+  }
+  
+  static ChannelJoinCommand fromMap(Map m) {
+    return new ChannelJoinCommand.With(m['id'], m['channelId']);
+  }
+}
+
 class SetChannelVarsCommand implements Command {
   SetChannelVarsCommand();
   SetChannelVarsCommand.With(this.id, this.channelId, this.limit);
