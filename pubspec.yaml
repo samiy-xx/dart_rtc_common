@@ -1,7 +1,6 @@
-name:  dart_rtc_common
-description:  Common library for dart_rtc_client and dart_rtc_server
-author: Sami Ylonen <sami.ylonen@gmail.com>
+name: dart_rtc_common
 version: 0.1.0
-
+author: Sami Ylonen <sami.ylonen@gmail.com>
+description: Common library for dart_rtc_client and dart_rtc_server
 dependencies:
-  unittest: 0.3.4
+  unittest: 0.3.7+6
