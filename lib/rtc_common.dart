@@ -33,7 +33,4 @@ part "src/packet/channelpacket.dart";
 part 'src/logging/logger.dart';
 part 'src/logging/loglevel.dart';
 part 'src/util.dart';
-part 'src/constraints.dart';
-part 'src/streamconstraints.dart';
-part 'src/videoconstraints.dart';
-part 'src/peerconstraints.dart';
+
