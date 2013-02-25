@@ -1,14 +1,14 @@
 part of rtc_common;
 
-class ChannelMessage implements Packet {
+class ChannelMessage extends Packet {
   ChannelMessage();
   ChannelMessage.With(this.id, this.channelId, this.message);
-  
+
   PacketType packetType = PacketType.CHANNELMESSAGE;
   String id = "";
   String channelId = "";
   String message = "";
-  
+
   Map toJson() {
     return {
       'packetType': packetType.toString(),
@@ -17,7 +17,7 @@ class ChannelMessage implements Packet {
       'message': message
     };
   }
-  
+
   static ChannelMessage fromMap(Map m) {
       return new ChannelMessage.With(m['id'], m['channelId'], m['message']);
   }

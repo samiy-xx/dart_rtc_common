@@ -1,14 +1,14 @@
 part of rtc_common;
 
-class FilePacket implements Packet {
+class FilePacket extends Packet {
   FilePacket();
   FilePacket.With(this.id, this.fileName, this.fileSize);
-  
+
   PacketType packetType = PacketType.FILE;
   String id = "";
   String fileName = "";
   String fileSize = "0";
-  
+
   Map toJson() {
     return {
       'packetType': packetType.toString(),
@@ -17,7 +17,7 @@ class FilePacket implements Packet {
       'fileSize': fileSize
     };
   }
-  
+
   static FilePacket fromMap(Map m) {
     return new FilePacket.With(m['id'], m['fileName'], m['fileSize']);
   }

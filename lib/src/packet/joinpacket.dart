@@ -1,13 +1,13 @@
 part of rtc_common;
 
-class JoinPacket implements Packet {
+class JoinPacket extends Packet {
   JoinPacket();
   JoinPacket.With(this.channelId, this.id);
-  
+
   PacketType packetType = PacketType.JOIN;
   String channelId = "";
   String id = "";
-  
+
   Map toJson() {
     return {
       'packetType': packetType.toString(),
@@ -15,7 +15,7 @@ class JoinPacket implements Packet {
       'id': id
     };
   }
-  
+
   static JoinPacket fromMap(Map m) {
     return new JoinPacket.With(m['channelId'], m['id']);
   }

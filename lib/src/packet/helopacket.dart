@@ -1,13 +1,13 @@
 part of rtc_common;
 
-class HeloPacket implements Packet {
+class HeloPacket extends Packet {
   HeloPacket();
   HeloPacket.With(this.channelId, this.id);
-  
+
   PacketType packetType = PacketType.HELO;
   String channelId = "";
   String id = "";
-  
+
   Map toJson() {
     return {
       'packetType': packetType.toString(),
@@ -15,7 +15,7 @@ class HeloPacket implements Packet {
       'id': id
     };
   }
-  
+
   static HeloPacket fromMap(Map m) {
     return new HeloPacket.With(m['channelId'], m['id']);
   }

@@ -3,31 +3,37 @@ part of rtc_common_tests;
 class PacketTests {
   run() {
     group('PacketTests', () {
-      Packet p;
-      final String packetId = "abc";
-      final PacketType packetType = PacketType.BYE;
-      
+      final String id = "aaa";
+      final String channelId = "bbb";
+
+      TestPacket testPacket;
+
       setUp(() {
-        p = new ByePacket();
-        p.id = packetId; 
+        testPacket = new TestPacket.With(id);
       });
-      
+
       tearDown(() {
-        p = null;
+
       });
-      
+
       test("Packet, When created, is not null", () {
-        expect(p, isNotNull);
+        expect(testPacket, isNotNull);
       });
-      
+
       test("Packet, When created, has properties", () {
-        expect(p.id, equals(packetId));
-        expect(p.packetType, equals(packetType));
-        expect(p.toJson() is Map, equals(true));
-        expect(p.toJson(), contains('packetType'));
-        expect(p.toJson(), contains('id'));
+        expect(testPacket.id, equals(id));
+        expect(testPacket.packetType.toString(), equals("test"));
+        expect(testPacket.toString() is String, equals(true));
+        expect(testPacket.toJson() is Map, equals(true));
+        expect(testPacket.toJson(), contains('packetType'));
+        expect(testPacket.toJson(), contains('id'));
       });
-      
+
+      test("Packet, calling toString, returns correct data", () {
+        String data = testPacket.toString();
+        Map m = json.parse(data);
+        expect(m.containsKey("id"), equals(true));
+      });
     });
   }
 }

@@ -1,6 +1,6 @@
 part of rtc_common;
 
-class QueuePacket implements Packet {
+class QueuePacket extends Packet {
   QueuePacket() : super();
   QueuePacket.With(this.id, this.channelId, this.position);
 
@@ -23,7 +23,7 @@ class QueuePacket implements Packet {
   }
 }
 
-class NextPacket implements Packet {
+class NextPacket extends Packet {
   NextPacket();
   NextPacket.With(this.id, this.channelId);
 
