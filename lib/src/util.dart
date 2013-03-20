@@ -51,7 +51,7 @@ class Util {
     StringBuffer buf = new StringBuffer();
     Random r = new Random();
     for (int i = 0; i < length; i++) {
-      buf.add(chars[r.nextInt(max)]);
+      buf.write(chars[r.nextInt(max)]);
     }
     
     return buf.toString();
