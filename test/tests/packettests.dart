@@ -34,6 +34,11 @@ class PacketTests {
         Map m = json.parse(data);
         expect(m.containsKey("id"), equals(true));
       });
+      
+      test("PacketType, compare operator, works", () {
+        expect(PacketType.ID, equals(PacketType.ID));
+        expect(PacketType.ID == PacketType.ID, equals(true));
+      });
     });
   }
 }
