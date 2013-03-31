@@ -4,12 +4,12 @@ class RandomUserPacket extends Packet {
   RandomUserPacket();
   RandomUserPacket.With(this.id);
 
-  PacketType packetType = PacketType.RANDOM;
+  String packetType = PACKET_TYPE_RANDOM;
   String id = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id
     };
   }

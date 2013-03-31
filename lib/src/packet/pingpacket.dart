@@ -4,12 +4,12 @@ class PingPacket extends Packet {
   PingPacket();
   PingPacket.With(this.id);
 
-  PacketType packetType = PacketType.PING;
+  String packetType = PACKET_TYPE_PING;
   String id = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id
     };
   }

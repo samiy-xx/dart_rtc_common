@@ -8,13 +8,13 @@ class ByePacket extends Packet {
   ByePacket();
   ByePacket.With(this.id);
 
-  PacketType packetType = PacketType.BYE;
+  String packetType = PACKET_TYPE_BYE;
 
   String id = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id
     };
   }
