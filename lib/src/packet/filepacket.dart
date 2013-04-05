@@ -4,14 +4,14 @@ class FilePacket extends Packet {
   FilePacket();
   FilePacket.With(this.id, this.fileName, this.fileSize);
 
-  PacketType packetType = PacketType.FILE;
+  String packetType = PACKET_TYPE_FILE;
   String id = "";
   String fileName = "";
   String fileSize = "0";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id,
       'fileName': fileName,
       'fileSize': fileSize

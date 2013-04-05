@@ -4,12 +4,12 @@ class PeerCreatedPacket extends Packet {
   PeerCreatedPacket();
   PeerCreatedPacket.With(this.id);
 
-  PacketType packetType = PacketType.PEERCREATED;
+  String packetType = PACKET_TYPE_PEERCREATED;
   String id = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id
     };
   }

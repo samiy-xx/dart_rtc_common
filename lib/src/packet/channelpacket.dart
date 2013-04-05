@@ -4,7 +4,7 @@ class ChannelPacket extends Packet {
   ChannelPacket() : super();
   ChannelPacket.With(this.id, this.channelId, this.owner, this.users, this.limit);
 
-  PacketType packetType = PacketType.CHANNEL;
+  String packetType = PACKET_TYPE_CHANNEL;
   String id;
   String channelId;
   bool owner;
@@ -18,7 +18,7 @@ class ChannelPacket extends Packet {
       'owner': owner,
       'users': users,
       'limit': limit,
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 
@@ -41,7 +41,7 @@ class RemoveUserCommand extends Command {
   RemoveUserCommand();
   RemoveUserCommand.With(this.id, this.channelId);
 
-  PacketType packetType = PacketType.REMOVEUSER;
+  String packetType = PACKET_TYPE_REMOVEUSER;
   String id;
   String channelId;
 
@@ -49,7 +49,7 @@ class RemoveUserCommand extends Command {
     return {
       'id': id,
       'channelId': channelId,
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 
@@ -64,7 +64,7 @@ class ChannelJoinCommand extends Command {
 
   String id;
   String channelId;
-  PacketType packetType = PacketType.CHANNELJOIN;
+  String packetType = PACKET_TYPE_CHANNELJOIN;
 
   Map toJson() {
     return {
@@ -85,7 +85,7 @@ class ChangeNickCommand extends Command {
 
   String id;
   String newId;
-  PacketType packetType = PacketType.CHANGENICK;
+  String packetType = PACKET_TYPE_CHANGENICK;
 
   Map toJson() {
     return {
@@ -104,7 +104,7 @@ class SetChannelVarsCommand extends Command {
   SetChannelVarsCommand();
   SetChannelVarsCommand.With(this.id, this.channelId, this.limit);
 
-  PacketType packetType = PacketType.SETCHANNELVARS;
+  String packetType = PACKET_TYPE_SETCHANNELVARS;
   String id;
   String channelId;
   int limit;
@@ -114,7 +114,7 @@ class SetChannelVarsCommand extends Command {
       'id': id,
       'channelId': channelId,
       'limit': limit,
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 

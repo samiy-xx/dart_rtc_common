@@ -4,7 +4,7 @@ class DescriptionPacket extends Packet {
   DescriptionPacket() : super();
   DescriptionPacket.With(this.sdp, this.type, this.id, this.channelId);
 
-  PacketType packetType = PacketType.DESC;
+  String packetType = PACKET_TYPE_DESC;
   String sdp;
   String id;
   String channelId;
@@ -15,7 +15,7 @@ class DescriptionPacket extends Packet {
       'sdp':sdp,
       'type': type,
       'id':id,
-      'packetType':packetType.toString(),
+      'packetType':packetType,
       'channelId':channelId
     };
   }

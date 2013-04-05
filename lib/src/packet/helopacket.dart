@@ -4,13 +4,13 @@ class HeloPacket extends Packet {
   HeloPacket();
   HeloPacket.With(this.channelId, this.id);
 
-  PacketType packetType = PacketType.HELO;
+  String packetType = PACKET_TYPE_HELO;
   String channelId = "";
   String id = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'channelId': channelId,
       'id': id
     };

@@ -8,14 +8,14 @@ class IcePacket extends Packet{
   String sdpMid;
   int sdpMLineIndex;
   String id;
-  PacketType packetType = PacketType.ICE;
+  String packetType = PACKET_TYPE_ICE;
 
   Map toJson() {
     return {
       'candidate':candidate,
       'sdpMid':sdpMid,
       'sdpMLineIndex':sdpMLineIndex,
-      'packetType':packetType.toString(),
+      'packetType':packetType,
       'id':id
     };
   }

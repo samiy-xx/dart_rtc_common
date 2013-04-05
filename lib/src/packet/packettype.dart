@@ -1,6 +1,29 @@
 part of rtc_common;
 
-
+const String PACKET_TYPE_HELO = "helo";
+const String PACKET_TYPE_DESC = "desc";
+const String PACKET_TYPE_ICE =  "ice";
+const String PACKET_TYPE_USER = "user";
+const String PACKET_TYPE_BYE =  "bye";
+const String PACKET_TYPE_JOIN = "join";
+const String PACKET_TYPE_ID = "id";
+const String PACKET_TYPE_ACK = "ack";
+const String PACKET_TYPE_PING = "ping";
+const String PACKET_TYPE_PONG = "pong";
+const String PACKET_TYPE_CONNECTED = "connected";
+const String PACKET_TYPE_RANDOM = "random";
+const String PACKET_TYPE_DISCONNECTED = "disconnected";
+const String PACKET_TYPE_QUEUE = "queue";
+const String PACKET_TYPE_FILE = "file";
+const String PACKET_TYPE_NEXT = "next";
+const String PACKET_TYPE_REMOVEUSER = "removeuser";
+const String PACKET_TYPE_USERMESSAGE = "usermessage";
+const String PACKET_TYPE_CHANNELMESSAGE = "channelmessage";
+const String PACKET_TYPE_CHANNEL = "channel";
+const String PACKET_TYPE_CHANNELJOIN = "channeljoin";
+const String PACKET_TYPE_CHANGENICK = "changenick";
+const String PACKET_TYPE_PEERCREATED = "peercreated";
+const String PACKET_TYPE_SETCHANNELVARS = "setchannelvars";
 
 class PacketType {
 

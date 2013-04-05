@@ -4,14 +4,14 @@ class UserMessage extends Packet {
   UserMessage();
   UserMessage.With(this.id, this.message);
 
-  PacketType packetType = PacketType.USERMESSAGE;
+  String packetType = PACKET_TYPE_USERMESSAGE;
   String id = "";
 
   String message = "";
 
   Map toJson() {
     return {
-      'packetType': packetType.toString(),
+      'packetType': packetType,
       'id': id,
 
       'message': message

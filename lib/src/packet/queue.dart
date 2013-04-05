@@ -4,7 +4,7 @@ class QueuePacket extends Packet {
   QueuePacket() : super();
   QueuePacket.With(this.id, this.channelId, this.position);
 
-  PacketType packetType = PacketType.QUEUE;
+  String packetType = PACKET_TYPE_QUEUE;
   String id;
   String channelId;
   String position;
@@ -14,7 +14,7 @@ class QueuePacket extends Packet {
       'id': id,
       'channelId': channelId,
       'position': position,
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 
@@ -27,7 +27,7 @@ class NextPacket extends Packet {
   NextPacket();
   NextPacket.With(this.id, this.channelId);
 
-  PacketType packetType = PacketType.NEXT;
+  String packetType = PACKET_TYPE_NEXT;
   String id;
   String channelId;
 
@@ -35,7 +35,7 @@ class NextPacket extends Packet {
     return {
       'id': id,
       'channelId': channelId,
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 

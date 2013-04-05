@@ -3,12 +3,12 @@ part of rtc_common;
 class PongPacket  extends Packet{
   PongPacket();
 
-  PacketType packetType = PacketType.PONG;
+  String packetType = PACKET_TYPE_PONG;
   String id;
 
   Map toJson() {
     return {
-      'packetType': packetType.toString()
+      'packetType': packetType
     };
   }
 
