@@ -22,7 +22,7 @@ class PacketTests {
 
       test("Packet, When created, has properties", () {
         expect(testPacket.id, equals(id));
-        expect(testPacket.packetType.toString(), equals("test"));
+        expect(testPacket.packetType, equals("bye"));
         expect(testPacket.toString() is String, equals(true));
         expect(testPacket.toJson() is Map, equals(true));
         expect(testPacket.toJson(), contains('packetType'));
@@ -35,14 +35,7 @@ class PacketTests {
         expect(m.containsKey("id"), equals(true));
       });
 
-      test("PacketType, compare operator, works", () {
-        expect(PacketType.ID, equals(PacketType.ID));
-        expect(PacketType.ID == PacketType.ID, equals(true));
-        PacketType t = PacketType.ID;
-        expect(t, equals(PacketType.ID));
-        expect(new PacketType("id"), equals(PacketType.ID));
-        expect(new PacketType("id") == PacketType.ID, equals(true));
-      });
+
     });
   }
 }

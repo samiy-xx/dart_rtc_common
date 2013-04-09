@@ -4,7 +4,7 @@ class TestPacket extends Packet {
   TestPacket();
   TestPacket.With(this.id);
 
-  PacketType packetType = const PacketType("test");
+  String packetType = PACKET_TYPE_BYE;
   String id = "";
 
   Map toJson() {
