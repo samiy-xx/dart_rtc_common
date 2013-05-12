@@ -3,4 +3,4 @@ version: 0.1.0
 author: Sami Ylonen <sami.ylonen@gmail.com>
 description: Common library for dart_rtc_client and dart_rtc_server
 dependencies:
-  unittest: 0.4.7+1
+  unittest: 0.5.7
