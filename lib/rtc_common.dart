@@ -2,6 +2,8 @@ library rtc_common;
 import 'dart:json' as json;
 import 'dart:math';
 
+import 'package:logging/logging.dart';
+import 'package:logging_handlers/logging_handlers_shared.dart';
 // Base stuff
 part 'src/packethandler.dart';
 part 'src/packetfactory.dart';
@@ -30,7 +32,5 @@ part 'src/packet/queue.dart';
 part "src/packet/filepacket.dart";
 part "src/packet/channelpacket.dart";
 
-part 'src/logging/logger.dart';
-part 'src/logging/loglevel.dart';
 part 'src/util.dart';
 

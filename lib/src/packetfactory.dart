@@ -3,22 +3,22 @@ part of rtc_common;
 /**
  * PacketFactory
  * Static methods to create Packet from Map or JSON String
- * 
+ *
  * TODO: Use mirrors?
  */
 class PacketFactory {
-  
+  static final _logger = new Logger("dart_rtc_common.PacketFactory");
   /**
    * Returns a packet from string input
    */
   static Packet getPacketFromString(String input) {
-    try { 
+    try {
       return getPacketFromMap(json.parse(input));
     } on InvalidPacketException catch(e) {
       throw e;
     }
   }
-  
+
   /**
    * Returns a packet from map
    */
@@ -91,23 +91,23 @@ class PacketFactory {
           p = ChangeNickCommand.fromMap(m);
           break;
         default:
-          new Logger().Warning("(packetfactory.dart) Unkown packet ($pt)");
+          _logger.warning("(packetfactory.dart) Unkown packet ($pt)");
           p = null;
           break;
       }
       return p;
     } catch(e) {
-      new Logger().Error(m.toString());
+      _logger.severe(m.toString());
       throw new InvalidPacketException("Packet was malformed (${m.toString()})", e);
     }
   }
-  
+
   /**
    * Returns a json stringified Packet for websocket send
    */
   static String get(Packet p) {
     //return p.toString();
-    return json.stringify(p); 
+    return json.stringify(p);
   }
-  
+
 }

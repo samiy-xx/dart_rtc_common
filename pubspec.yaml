@@ -4,3 +4,4 @@ author: Sami Ylonen <sami.ylonen@gmail.com>
 description: Common library for dart_rtc_client and dart_rtc_server
 dependencies:
   unittest: 0.5.5
+  logging_handlers: 0.5.0+2
