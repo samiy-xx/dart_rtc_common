@@ -1,17 +1,16 @@
 library rtc_common;
+
 import 'dart:json' as json;
 import 'dart:math';
 
 import 'package:logging/logging.dart';
 import 'package:logging_handlers/logging_handlers_shared.dart';
-// Base stuff
+
 part 'src/packethandler.dart';
 part 'src/packetfactory.dart';
 part 'src/eventtarget.dart';
-// Exceptions
 part 'src/exception/invalidpacketexception.dart';
 
-// Packets
 part 'src/packet/packettype.dart';
 part 'src/packet/basepacket.dart';
 part 'src/packet/idpacket.dart';
